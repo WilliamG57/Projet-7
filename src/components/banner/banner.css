@@ -1,0 +1,19 @@
+.banner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../assets/homeBanner.png');
+    background-position: center;
+    background-size: cover;
+    height: 223px;
+    width: 95%;
+    border-radius: 25px;
+    margin: 30px auto;
+}
+
+.banner p{
+    color: #fff;
+    font-size: 48px;
+    font-weight: 500;
+}

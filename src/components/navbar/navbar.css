@@ -1,0 +1,20 @@
+/* li{
+    list-style: none;
+    text-decoration: none;
+} */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.nav_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    color: #ff6060;
+    list-style: none;
+}
+.nav_list_item:hover{
+    text-decoration: underline solid #ff6060;
+}

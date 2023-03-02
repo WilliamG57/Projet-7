@@ -1,0 +1,29 @@
+.gallery_card{
+    display: flex;
+    width: 340px;
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.gallery_card:hover{
+    box-shadow: 0 2px 8px rgb(0, 0, 0);
+}
+.gallery_card:hover img{
+    transform: scale(1.1);
+}
+.gallery_card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+h2{
+    position: absolute;
+    z-index: 10;
+    font-weight: 500;
+    font-size: 18px;
+    bottom: 3px;
+    left: 5px;
+    color: #fff;
+}
