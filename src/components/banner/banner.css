@@ -11,9 +11,18 @@
     border-radius: 25px;
     margin: 30px auto;
 }
-
 .banner p{
     color: #fff;
     font-size: 48px;
     font-weight: 500;
+}
+.banner_about{
+    background-image: url('../../assets/aboutMountain.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 223px;
+    max-width: 95%;
+    margin: 40px auto;
+    border-radius: 25px;
 }
