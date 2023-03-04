@@ -1,10 +1,16 @@
 .gallery_card{
     display: flex;
-    width: 340px;
+    width: 29%;
     height: 340px;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+}
+@media screen and (max-width:1230px) {
+    .gallery_card{
+        width: 100%;
+    }
+    
 }
 .gallery_card:hover{
     box-shadow: 0 2px 8px rgb(0, 0, 0);

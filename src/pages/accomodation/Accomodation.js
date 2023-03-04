@@ -22,7 +22,10 @@ export default function Accomodation() {
     const name = accomodation.host.name;
     const rating = accomodation.rating;
     const description = accomodation.description;
-    const equipment = accomodation.equipments;
+    const equipment = accomodation.equipments.map((equipment, index) => {
+        return <li key={index}>{equipment}</li>
+    });
+
 
     return (
         <>
@@ -32,34 +35,43 @@ export default function Accomodation() {
             <div className='accomodation_content'>
                 <div className='accomodation_content_info'>
                     <h1>{accomodation.title}</h1>
-                    <p>{accomodation.location}</p>
+                    <span>{accomodation.location}</span>
+                    <div className='button_flex'>
+                        {accomodation.tags.map((tag, index) => {
+                        return (
+                            <button key={index}>{tag}</button>
+                        )
+                        })}
+                    </div>
                 </div>
-                <div> {accomodation.tags.map((tag, index) => {
-                    return (
-                        <button key={index}>{tag}</button>
-                    )
-                })}
+                <div className='accomodation_content_host'>
+                    <div>
+                        <div className='accomodation_content_host_name'>
+                            <span>{name}</span>
+                        </div>
+                        <img src={accomodation.host.picture} alt='' />
+                    </div>
+                    <div className='accomodation_content_host_rating'>
+                        {[1, 2, 3, 4, 5].map((rate, index) => {
+                            const ratingValue = index + 1;
+                            return (
+                                <img key={index} src={ratingValue <= rating ? redStar : greyStar} alt='rate' />
+                            )
+                        })
+                        }
+                    </div>
                 </div>
             </div>
-            <div className='accomodation_content_host'>
-                <div>
-                    <div className='accomodation_content_host_name'>
-                        <span>{name}</span>
-                    </div>
-                    <img src={accomodation.host.picture} alt='' />
+            <div className='accomodation_collapse'>
+                <div className='accomodation_collapse_item'>
+                    <Collapse title={'Description'} content={description}/>
                 </div>
-                <div className='accomodation_content_host_rating'>
-                    {[1, 2, 3, 4, 5].map((rate, index) => {
-                        const ratingValue = index + 1;
-                        return (
-                            <img key={index} src={ratingValue <= rating ? redStar : greyStar} alt='rate' />
-                        )
-                    })
-                    }
+                <div className='accomodation_collapse_item'>
+                    <Collapse title={'Equipement'} content={equipment} />
                 </div>
             </div>
         </main>
-        <div>{accomodation.id}</div>
+        <Footer />
         </>
     )
 }

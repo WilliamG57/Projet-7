@@ -2,7 +2,6 @@
     max-width: 95%;
     margin: 0 auto;
     color: #ff6060;
-    /* padding-bottom: 40px; */
 }
 .notFound_info{
     display: flex;
@@ -16,7 +15,13 @@
     font-size: 288px;
     height: 263px;
     margin: 20px;
+}
+@media screen and (max-width: 550px) {
+    .notFound_info_title{
+        font-size: 140px;
     }
+    
+}
 .notFound_info_content{
     size: 36px;
     text-align: center;

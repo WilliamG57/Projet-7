@@ -30,9 +30,11 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    /* height: auto; */
+    height: auto;
     padding: 10px;
     size: 24px;
+    color: #ff6060;
+    letter-spacing: 1px;
 }
 .collapse_content_hidden{
     visibility: hidden;
