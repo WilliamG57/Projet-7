@@ -15,6 +15,12 @@ a{
     color: #ff6060;
     list-style: none;
 }
+@media screen and (max-width: 650px){
+    .nav_list{
+        gap: 20px;
+        padding-left: 20px;
+    }
+}
 .nav_list_item:hover{
     text-decoration: underline solid #ff6060;
 }
