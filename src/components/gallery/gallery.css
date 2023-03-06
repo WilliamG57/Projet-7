@@ -7,7 +7,12 @@
     background-color: #f7f7f7;
     width: 93%;
     border-radius: 25px;
-    margin: 0 auto;
+    margin: 0 5px;
     gap: 60px;
     padding: 40px;
+}
+@media  screen and (max-width: 650px){
+    .home_gallery{
+        padding: 0px;
+    }
 }

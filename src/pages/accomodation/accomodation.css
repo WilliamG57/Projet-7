@@ -89,4 +89,9 @@ li{
 .accomodation_collapse_item{
     width: 50%;
 }
+@media  screen and (max-width: 650px){
+    .accomodation_collapse{
+        gap: 5px;
+    }
+}
 
