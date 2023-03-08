@@ -11,8 +11,14 @@
     border-radius: 25px;
     margin: 30px auto;
 }
+@media screen and (max-width: 1024px){
+    .banner{
+        margin: 30px 0px 30px 5px;
+    }
+}
 @media screen and (max-width: 550px){
-    .banner{margin: 20px 0px 20px 5px;
+    .banner{
+        margin: 20px 0px 20px 5px;
     height: 120px;
     }
 }
