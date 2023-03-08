@@ -1,23 +1,22 @@
 import './accomodation.css'
 import data from '../../data/data'
 import Header from '../../components/header/Header'
-import Slider from '../../components/carrousel/Carrousel'
+import NotFound from '../notFound/NotFound'
+import Carrousel from '../../components/carrousel/Carrousel'
 import Collapse from '../../components/collapse/Collapse'
 import Footer from '../../components/footer/Footer'
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
 import redStar from '../../assets/redStar.png'
 import greyStar from '../../assets/greyStar.png'
 
 export default function Accomodation() {
-    const [imageSlider, setImageSlider] = useState([]);
     const {accomodationNumber} = useParams();
-    const accomodation = data.find(data => data.id === accomodationNumber);
+    const accomodation = data.find(accomodation => accomodation.id === accomodationNumber);
 
-    useEffect(() => {
-        const accomodation = data.find(data => data.id === accomodationNumber);
-        setImageSlider(accomodation.pictures);
-    }, [accomodationNumber]);
+    if (!accomodation) {
+            console.log(accomodation)
+                return < NotFound />
+                };
 
     const name = accomodation.host.name;
     const rating = accomodation.rating;
@@ -26,11 +25,10 @@ export default function Accomodation() {
         return <li key={index}>{equipment}</li>
     });
 
-
     return (
         <>
         <Header />
-        <Slider imageSlider={imageSlider}/>
+        <Carrousel imageSlider={accomodation.pictures}/>
         <main className='accomodation'>
             <div className='accomodation_content'>
                 <div className='accomodation_content_info'>
@@ -71,7 +69,7 @@ export default function Accomodation() {
                 </div>
             </div>
         </main>
-        <Footer />
+        <Footer />  
         </>
     )
 }
